@@ -1,8 +1,5 @@
-/*
- * Dados dos projetos tipados.
- * Separar dados de UI é uma boa prática — facilita adicionar projetos
- * sem tocar nos componentes visuais.
- */
+//Dados dos projetos tipados.
+
 export interface Project {
   title: string;
   descriptionKey: "appointment" | "task";

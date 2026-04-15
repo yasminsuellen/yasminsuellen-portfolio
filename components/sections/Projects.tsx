@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslation } from "@/lib/i18n/context";
 import { SectionTitle } from "./About";
 import { FadeIn } from "@/components/FadeIn";
@@ -8,13 +9,13 @@ export function Projects() {
   const { t } = useTranslation();
 
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-0 px-6">
       <div className="max-w-5xl mx-auto">
         <SectionTitle title={t.projects.title} />
 
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           {t.projects.items.map((project, i) => (
-            <FadeIn key={i} delay={i * 0.15}>
+            <FadeIn key={i} delay={i * 0.15} className="h-full">
               <ProjectCard project={project} t={t} />
             </FadeIn>
           ))}
@@ -39,31 +40,35 @@ function ProjectCard({
   project: ProjectItem;
   t: ReturnType<typeof useTranslation>["t"];
 }) {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <article
-      className="flex flex-col p-6 rounded-2xl border transition-all duration-200 hover:scale-[1.01]"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="flex flex-col h-full p-6 rounded-2xl border"
       style={{
-        borderColor: "var(--border)",
+        borderColor: hovered ? "var(--accent)" : "var(--border)",
         backgroundColor: "var(--surface)",
+        transform: hovered ? "translateY(-6px)" : "translateY(0)",
+        transition: "border-color 0.2s ease, transform 0.2s ease",
       }}
     >
-      {/* Número do projeto */}
-      <span
-        className="text-xs font-mono mb-4"
-        style={{ color: "var(--accent)" }}
-      >
-        {String(getProjectIndex(project.title)).padStart(2, "0")}.
-      </span>
+      <div className="flex items-baseline gap-3 mb-3">
+        <span
+          className="text-xs font-mono shrink-0"
+          style={{ color: "var(--accent)" }}
+        >
+          {String(getProjectIndex(project.title)).padStart(2, "0")}.
+        </span>
+        <h3
+          className="text-lg font-bold"
+          style={{ color: "var(--fg)" }}
+        >
+          {project.title}
+        </h3>
+      </div>
 
-      {/* Título */}
-      <h3
-        className="text-lg font-bold mb-3"
-        style={{ color: "var(--fg)" }}
-      >
-        {project.title}
-      </h3>
-
-      {/* Descrição */}
       <p
         className="text-sm leading-relaxed flex-1 mb-6"
         style={{ color: "var(--muted)" }}
@@ -71,29 +76,15 @@ function ProjectCard({
         {project.description}
       </p>
 
-      {/* Tags */}
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex flex-wrap items-center gap-2">
         {project.tags.map((tag) => (
-          <span
-            key={tag}
-            className="text-xs px-3 py-1 rounded-full border font-mono"
-            style={{
-              color: "var(--muted)",
-              borderColor: "var(--border)",
-            }}
-          >
-            {tag}
-          </span>
+          <ProjectTag key={tag} tag={tag} />
         ))}
-      </div>
-
-      {/* Links */}
-      <div className="flex gap-4">
         <a
           href={project.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200"
+          className="inline-flex items-center gap-2 text-sm font-medium ml-auto transition-colors duration-200"
           style={{ color: "var(--accent)" }}
         >
           <GithubIcon />
@@ -116,7 +107,25 @@ function ProjectCard({
   );
 }
 
-/* Gera o índice do projeto baseado na posição nas traduções */
+function ProjectTag({ tag }: { tag: string }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <span
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="text-xs px-3 py-1 rounded-full border font-mono cursor-default"
+      style={{
+        backgroundColor: hovered ? "var(--accent)" : "transparent",
+        borderColor:     hovered ? "var(--accent)" : "var(--border)",
+        color:           hovered ? "#ffffff"        : "var(--fg)",
+        transition: "background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease",
+      }}
+    >
+      {tag}
+    </span>
+  );
+}
+
 function getProjectIndex(title: string) {
   const titles = ["Appointment Rebooking", "Task Management Dashboard"];
   return titles.indexOf(title) + 1;

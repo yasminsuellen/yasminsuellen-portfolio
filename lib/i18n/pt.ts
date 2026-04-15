@@ -17,28 +17,29 @@ export const pt = {
   },
   about: {
     title: "Sobre mim",
-    bio: "Sou desenvolvedora frontend e backend em início de carreira, com foco em desenvolvimento web. Meu objetivo é ir além da curva — construindo coisas reais, aprendendo com profundidade e documentando cada passo da jornada.",
+    bio: "Sou desenvolvedora frontend e backend em início de carreira, com foco em desenvolvimento web. Meu objetivo é ir além da curva, construindo coisas reais, aprendendo com profundidade e documentando cada passo da jornada.",
     background_title: "Antes do código",
     background:
-      "Antes de migrar para desenvolvimento, passei 2+ anos na Stone investigando incidentes de segurança e analisando fraudes transacionais com Splunk (SIEM). Depois fui para a AnotaAI (iFood), onde gerenciei o onboarding técnico de plataformas de automação — 900+ clientes onboardados.",
+      "Antes de migrar para desenvolvimento, passei 2+ anos na Stone investigando incidentes de segurança e analisando fraudes transacionais com Splunk (SIEM). Depois fui para a AnotaAI (iFood), onde gerenciei o onboarding técnico de plataformas de automação, com 900+ clientes onboardados.",
     background_closing:
       "Esse histórico moldou como eu enxergo software: com consciência prática de comportamento de sistemas, integridade de dados e documentação técnica.",
     currently_title: "Atualmente",
     currently: [
-      "Cursando Sistemas de Informação na Universidade Veiga de Almeida (previsão: 2028)",
-      "Aprofundando conhecimento em Node.js, PostgreSQL e fundamentos de backend",
-      "Construindo projetos que refletem padrões do mundo real — sem tutoriais",
+      "Cursando Sistemas de Informação na Universidade Veiga de Almeida, previsão: 2028.",
+      "Aprofundando conhecimento em Node.js, PostgreSQL e fundamentos de backend.",
+      "Construindo projetos que refletem padrões do mundo real, sem tutoriais.",
     ],
   },
   stack: {
     title: "Tech Stack",
-    primary: "Principal",
+    frontend: "Frontend",
+    backend: "Backend",
     tools: "Ferramentas",
     learning: "Aprendendo",
   },
   projects: {
     title: "Projetos",
-    view_code: "Ver código",
+    view_code: "Ver Código",
     view_demo: "Ver demo",
     items: [
       {
@@ -59,14 +60,14 @@ export const pt = {
   },
   contact: {
     title: "Contato",
-    subtitle: "Tem um projeto em mente ou quer trocar uma ideia? Me manda uma mensagem.",
+    subtitle: "Tem um projeto em mente ou quer trocar uma ideia? Me manda uma mensagem, ou me encontre em:",
     name_label: "Nome",
     name_placeholder: "Seu nome",
     email_label: "Email",
     email_placeholder: "seu@email.com",
     message_label: "Mensagem",
     message_placeholder: "Olá Yasmin, gostaria de...",
-    send: "Enviar mensagem",
+    send: "Enviar Mensagem",
     sending: "Enviando...",
     success: "Mensagem enviada! Retorno em breve.",
     error: "Ops, algo deu errado. Tente novamente.",

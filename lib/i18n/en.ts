@@ -19,28 +19,29 @@ export const en: Translations = {
   },
   about: {
     title: "About me",
-    bio: "I'm a frontend and backend developer early in my career, focused on web development. My goal is to be above the curve — building real things, learning with depth, and documenting every step of the journey.",
+    bio: "I'm a frontend and backend developer early in my career, focused on web development. My goal is to be above the curve, building real things, learning with depth, and documenting every step of the journey.",
     background_title: "Before the code",
     background:
-      "Before transitioning into development, I spent 2+ years at Stone investigating security incidents and analyzing transactional fraud using Splunk (SIEM). I then moved to AnotaAI (iFood), where I managed technical onboarding for automation platforms — completing 900+ client onboardings.",
+      "Before transitioning into development, I spent 2+ years at Stone investigating security incidents and analyzing transactional fraud using Splunk (SIEM). I then moved to AnotaAI (iFood), where I managed technical onboarding for automation platforms, completing 900+ client onboardings.",
     background_closing:
       "This background shapes how I approach software, with practical awareness of system behavior, data integrity, and technical documentation.",
     currently_title: "Currently",
     currently: [
-      "Studying Information Systems at Universidade Veiga de Almeida (expected 2028)",
-      "Deepening knowledge in Node.js, PostgreSQL, and backend fundamentals",
-      "Building projects that reflect real-world patterns rather than tutorial exercises",
+      "Studying Information Systems at Universidade Veiga de Almeida, expected 2028.",
+      "Deepening knowledge in Node.js, PostgreSQL, and backend fundamentals.",
+      "Building projects that reflect real-world patterns rather than tutorial exercises.",
     ],
   },
   stack: {
     title: "Tech Stack",
-    primary: "Primary",
+    frontend: "Frontend",
+    backend: "Backend",
     tools: "Tools",
     learning: "Learning",
   },
   projects: {
     title: "Projects",
-    view_code: "View code",
+    view_code: "View Code",
     view_demo: "Live demo",
     items: [
       {
@@ -61,14 +62,14 @@ export const en: Translations = {
   },
   contact: {
     title: "Contact",
-    subtitle: "Have a project in mind or want to chat? Send me a message.",
+    subtitle: "Have a project in mind or want to chat? Send me a message, or find me on:",
     name_label: "Name",
-    name_placeholder: "Your name",
+    name_placeholder: "Your Name",
     email_label: "Email",
     email_placeholder: "your@email.com",
     message_label: "Message",
     message_placeholder: "Hi Yasmin, I'd like to...",
-    send: "Send message",
+    send: "Send Message",
     sending: "Sending...",
     success: "Message sent! I'll get back to you soon.",
     error: "Something went wrong. Please try again.",

@@ -4,28 +4,32 @@
    Design Tokens — Dark Mode (padrão)
    ───────────────────────────────────────────── */
 :root {
-  --bg:      #0A0A0A;
-  --fg:      #FFFFFF;
-  --accent:  #E85D04;
-  --muted:   #6C6C6C;
-  --border:  rgba(255, 255, 255, 0.08);
-  --surface: rgba(255, 255, 255, 0.04);
+  --bg:           #0A0A0A;
+  --fg:           #FFFFFF;
+  --accent:       #E85D04;
+  --muted:        #6C6C6C;
+  --border:       rgba(255, 255, 255, 0.08);
+  --surface:      rgba(255, 255, 255, 0.04);
+  --btn-outline:  var(--fg);
+  --chip-color:   var(--fg);
 }
 
 /* ─────────────────────────────────────────────
    Design Tokens — Light Mode
    ───────────────────────────────────────────── */
 html.light {
-  --bg:      #FAFAFA;
-  --fg:      #0A0A0A;
-  --accent:  #E85D04;
-  --muted:   #6C6C6C;
-  --border:  rgba(0, 0, 0, 0.08);
-  --surface: rgba(0, 0, 0, 0.03);
+  --bg:           #FFF4EE;
+  --fg:           #0A0A0A;
+  --accent:       #E85D04;
+  --muted:        #6C6C6C;
+  --border:       rgba(0, 0, 0, 0.08);
+  --surface:      rgba(0, 0, 0, 0.03);
+  --btn-outline:  var(--accent);
+  --chip-color:   var(--accent);
 }
 
 /* ─────────────────────────────────────────────
-   Mapeia variáveis para o sistema do Tailwind v4
+   Mapeamento das variáveis para o sistema do Tailwind v4
    ───────────────────────────────────────────── */
 @theme inline {
   --color-bg:      var(--bg);
@@ -35,6 +39,7 @@ html.light {
   --color-border:  var(--border);
   --color-surface: var(--surface);
   --font-sans:     var(--font-raleway);
+  --font-display:  var(--font-bebas-neue);
 }
 
 /* ─────────────────────────────────────────────

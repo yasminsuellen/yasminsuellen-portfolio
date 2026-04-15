@@ -46,24 +46,40 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6">
+    <section id="contact" className="py-15 px-6">
       <div className="max-w-5xl mx-auto">
         <SectionTitle title={t.contact.title} />
 
-        <p
-          className="mt-4 mb-12 text-base"
-          style={{ color: "var(--muted)" }}
-        >
-          {t.contact.subtitle}
-        </p>
+        <div className="grid md:grid-cols-2 gap-12 mt-12">
+          <div className="flex flex-col justify-start gap-6">
+            <p className="text-base" style={{ color: "var(--muted)" }}>
+              {t.contact.subtitle}
+            </p>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Formulário */}
+            <div className="space-y-4">
+              <ContactLink
+                href="https://github.com/yasminsuellen"
+                label="GitHub"
+                sublabel="@yasminsuellen"
+              >
+                <GithubIcon />
+              </ContactLink>
+
+              <ContactLink
+                href="https://www.linkedin.com/in/yasminsuellen/"
+                label="LinkedIn"
+                sublabel="in/yasminsuellen"
+              >
+                <LinkedinIcon />
+              </ContactLink>
+            </div>
+          </div>
+
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label
                 htmlFor="name"
-                className="block text-xs font-semibold uppercase tracking-widest mb-2"
+                className="block text-base mb-2"
                 style={{ color: "var(--muted)" }}
               >
                 {t.contact.name_label}
@@ -88,7 +104,7 @@ export function Contact() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-xs font-semibold uppercase tracking-widest mb-2"
+                className="block text-base mb-2"
                 style={{ color: "var(--muted)" }}
               >
                 {t.contact.email_label}
@@ -113,7 +129,7 @@ export function Contact() {
             <div>
               <label
                 htmlFor="message"
-                className="block text-xs font-semibold uppercase tracking-widest mb-2"
+                className="block text-base mb-2"
                 style={{ color: "var(--muted)" }}
               >
                 {t.contact.message_label}
@@ -147,7 +163,6 @@ export function Contact() {
               {status === "sending" ? t.contact.sending : t.contact.send}
             </button>
 
-            {/* Feedback de status */}
             {status === "success" && (
               <p className="text-sm text-center" style={{ color: "#22c55e" }}>
                 {t.contact.success}
@@ -159,31 +174,6 @@ export function Contact() {
               </p>
             )}
           </form>
-
-          {/* Links de contato direto */}
-          <div className="flex flex-col justify-center gap-6">
-            <p className="text-sm" style={{ color: "var(--muted)" }}>
-              {t.contact.or}
-            </p>
-
-            <div className="space-y-4">
-              <ContactLink
-                href="https://github.com/yasminsuellen"
-                label="GitHub"
-                sublabel="@yasminsuellen"
-              >
-                <GithubIcon />
-              </ContactLink>
-
-              <ContactLink
-                href="https://www.linkedin.com/in/yasminsuellen/"
-                label="LinkedIn"
-                sublabel="in/yasminsuellen"
-              >
-                <LinkedinIcon />
-              </ContactLink>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -201,15 +191,20 @@ function ContactLink({
   sublabel: string;
   children: React.ReactNode;
 }) {
+  const [hovered, setHovered] = useState(false);
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-4 p-4 rounded-xl border transition-all duration-200 hover:scale-[1.02]"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="flex items-center gap-4 p-4 rounded-xl border"
       style={{
-        borderColor: "var(--border)",
+        borderColor: hovered ? "var(--accent)" : "var(--border)",
         backgroundColor: "var(--surface)",
+        transform: hovered ? "translateY(-6px)" : "translateY(0)",
+        transition: "border-color 0.2s ease, transform 0.2s ease",
       }}
     >
       <span style={{ color: "var(--accent)" }}>{children}</span>

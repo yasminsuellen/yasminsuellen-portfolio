@@ -1,9 +1,4 @@
-"use client";
-
-import { useTranslation } from "@/lib/i18n/context";
-
 export function Footer() {
-  const { t } = useTranslation();
   const year = new Date().getFullYear();
 
   return (
@@ -12,11 +7,15 @@ export function Footer() {
       style={{ borderColor: "var(--border)", color: "var(--muted)" }}
     >
       <p>
-        {t.footer.made}{" "}
+        © {year}{" "}
         <span style={{ color: "var(--accent)" }} className="font-semibold">
           Yasmin Suellen
-        </span>{" "}
-        · {year} · {t.footer.rights}
+        </span>
+        {" · "}Fullstack Developer{" | "}
+        <span style={{ color: "var(--accent)" }} className="font-semibold">
+          eusuellen.yasmin@gmail.com
+        </span>
+        {" · "}Brasil Remoto
       </p>
     </footer>
   );

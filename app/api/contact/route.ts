@@ -3,18 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 /*
  * API Route: POST /api/contact
- *
- * Recebe { name, email, message } do formulário e envia um email
- * usando a API do Resend. A chave de API fica em variável de ambiente
- * (nunca no código) — isso é uma prática de segurança fundamental.
- *
- * Para usar:
- *  1. Crie uma conta em resend.com
- *  2. Gere uma API key
- *  3. Crie um arquivo .env.local na raiz com:
- *     RESEND_API_KEY=re_xxxxxxxxxxxx
- *     CONTACT_EMAIL=seu@email.com
- */
+ * Recebe do formulário e envia um email usando a API do Resend.
+ */ 
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -29,7 +19,6 @@ export async function POST(req: NextRequest) {
     const body: ContactBody = await req.json();
     const { name, email, message } = body;
 
-    // Validação básica no servidor
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "All fields are required." },
@@ -56,7 +45,7 @@ export async function POST(req: NextRequest) {
 
     if (error) {
       console.error("Resend error:", error);
-      return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
+      return NextResponse.json({ error: "Failed to send email.", detail: error }, { status: 500 });
     }
 
     return NextResponse.json({ success: true }, { status: 200 });

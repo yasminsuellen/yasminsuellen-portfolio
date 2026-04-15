@@ -12,90 +12,88 @@ export function Hero() {
       className="min-h-screen flex flex-col justify-center px-6 pt-16"
     >
       <div className="max-w-5xl mx-auto w-full py-24">
-        {/* Greeting */}
-        <FadeIn delay={0.1}>
-          <p
-            className="text-base font-medium mb-3 tracking-wide"
-            style={{ color: "var(--accent)" }}
-          >
-            {t.hero.greeting}
-          </p>
-        </FadeIn>
+        <div className="grid md:grid-cols-2 gap-12 items-center">
 
-        {/* Nome */}
-        <FadeIn delay={0.2}>
-          <h1
-            className="text-5xl md:text-7xl font-extrabold leading-tight mb-4"
-            style={{ color: "var(--fg)" }}
-          >
-            {t.hero.name}
-          </h1>
-        </FadeIn>
+          <div>
+            <FadeIn delay={0.1}>
+              <h1
+                className="font-display text-5xl md:text-6xl leading-none tracking-wide mb-4 whitespace-nowrap"
+                style={{ color: "var(--fg)" }}
+              >
+                Yasmin{" "}
+                <span style={{ color: "var(--accent)" }}>Suellen</span>
+              </h1>
+            </FadeIn>
 
-        {/* Role */}
-        <FadeIn delay={0.3}>
-          <h2
-            className="text-2xl md:text-3xl font-semibold mb-6"
-            style={{ color: "var(--muted)" }}
-          >
-            {t.hero.role}
-          </h2>
-        </FadeIn>
+            <FadeIn delay={0.2}>
+              <h2
+                className="text-2xl md:text-3xl font-semibold mb-6"
+                style={{ color: "var(--fg)" }}
+              >
+                {t.hero.role}
+              </h2>
+            </FadeIn>
 
-        {/* Descrição */}
-        <FadeIn delay={0.4}>
-          <p
-            className="text-base md:text-lg leading-relaxed max-w-xl mb-10"
-            style={{ color: "var(--muted)" }}
-          >
-            {t.hero.description}
-          </p>
-        </FadeIn>
+            <FadeIn delay={0.3}>
+              <p
+                className="text-base md:text-lg leading-relaxed max-w-xl mb-10"
+                style={{ color: "var(--muted)" }}
+              >
+                {t.hero.description}
+              </p>
+            </FadeIn>
 
-        {/* CTAs */}
-        <FadeIn delay={0.5}>
-        <div className="flex flex-wrap gap-4">
-          <a
-            href="https://github.com/yasminsuellen"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200 hover:opacity-90 hover:scale-105"
-            style={{
-              backgroundColor: "var(--accent)",
-              color: "#FFFFFF",
-            }}
-          >
-            <GithubIcon />
-            {t.hero.cta_github}
-          </a>
+            <FadeIn delay={0.4}>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://github.com/yasminsuellen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all duration-200 hover:opacity-90 hover:scale-105"
+                  style={{ backgroundColor: "var(--accent)", color: "#FFFFFF" }}
+                >
+                  <GithubIcon />
+                  {t.hero.cta_github}
+                </a>
 
-          <a
-            href="https://www.linkedin.com/in/yasminsuellen/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border transition-all duration-200 hover:opacity-90 hover:scale-105"
-            style={{
-              borderColor: "var(--border)",
-              color: "var(--fg)",
-            }}
-          >
-            <LinkedinIcon />
-            {t.hero.cta_linkedin}
-          </a>
+                <a
+                  href="https://www.linkedin.com/in/yasminsuellen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm border transition-all duration-200 hover:opacity-90 hover:scale-105"
+                  style={{ borderColor: "var(--border)", color: "var(--btn-outline)" }}
+                >
+                  <LinkedinIcon />
+                  {t.hero.cta_linkedin}
+                </a>
 
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm border transition-all duration-200 hover:opacity-90 hover:scale-105"
-            style={{
-              borderColor: "var(--border)",
-              color: "var(--fg)",
-            }}
-          >
-            {t.hero.cta_contact}
-            <ArrowIcon />
-          </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm border transition-all duration-200 hover:opacity-90 hover:scale-105"
+                  style={{ borderColor: "var(--border)", color: "var(--btn-outline)" }}
+                >
+                  {t.hero.cta_contact}
+                  <ArrowIcon />
+                </a>
+              </div>
+            </FadeIn>
+          </div>
+
+          <FadeIn delay={0.3} direction="right">
+            <div
+              className="hidden md:flex items-center justify-center w-full aspect-square max-w-sm mx-auto rounded-2xl border-2 border-dashed"
+              style={{ borderColor: "var(--border)" }}
+            >
+              <div className="flex flex-col items-center gap-3" style={{ color: "var(--muted)" }}>
+                <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                </svg>
+                <p className="text-xs tracking-widest uppercase font-medium">foto</p>
+              </div>
+            </div>
+          </FadeIn>
+
         </div>
-        </FadeIn>
       </div>
     </section>
   );

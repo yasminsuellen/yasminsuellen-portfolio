@@ -6,11 +6,6 @@ import { TechStack } from "@/components/sections/TechStack";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
 
-/*
- * page.tsx é o ponto de entrada da aplicação.
- * Ele apenas compõe os componentes — sem lógica aqui.
- * Cada seção é responsável pelo seu próprio conteúdo e estilo.
- */
 export default function Home() {
   return (
     <>

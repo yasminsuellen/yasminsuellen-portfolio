@@ -1,42 +1,43 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslation } from "@/lib/i18n/context";
 import { SectionTitle } from "./About";
 import { FadeIn } from "@/components/FadeIn";
 
-/*
- * Usamos skillicons.dev para gerar os ícones de tecnologia automaticamente.
- * É uma API pública que retorna um SVG com os ícones por nome.
- * Não precisamos baixar nenhum ícone manualmente.
- */
+const row1 = ["TypeScript", "JavaScript", "Next.js", "React", "HTML5", "CSS3"];
+const row2 = ["Tailwind CSS", "Node.js", "PostgreSQL", "REST APIs", "Express.js", "Git", "GitHub", "Figma"];
+const row3 = ["VS Code", "Linux", "Docker", "Python", "CI/CD"];
 
-const primaryStack = ["ts", "js", "nextjs", "react", "tailwind", "nodejs"];
-const toolsStack = ["git", "github", "figma", "linux", "vscode"];
-const learningStack = ["docker", "postgres", "python"];
-
-interface StackGroupProps {
-  label: string;
-  icons: string[];
-}
-
-function StackGroup({ label, icons }: StackGroupProps) {
-  const iconParam = icons.join(",");
+function TagChip({ tag }: { tag: string }) {
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <div>
-      <p
-        className="text-xs font-semibold uppercase tracking-widest mb-4"
-        style={{ color: "var(--accent)" }}
-      >
-        {label}
-      </p>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={`https://skillicons.dev/icons?i=${iconParam}&theme=dark`}
-        alt={`${label} icons`}
-        className="h-10"
-      />
-    </div>
+    <span
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="text-sm px-4 py-2 rounded-full border font-bold cursor-default"
+      style={{
+        backgroundColor: hovered ? "var(--accent)" : "var(--surface)",
+        borderColor:     hovered ? "var(--accent)" : "var(--border)",
+        color:           hovered ? "#ffffff"        : "var(--chip-color)",
+        transition: "background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease",
+      }}
+    >
+      {tag}
+    </span>
+  );
+}
+
+function TagRow({ tags, delay = 0 }: { tags: string[]; delay?: number }) {
+  return (
+    <FadeIn delay={delay}>
+      <div className="flex flex-wrap justify-center gap-3">
+        {tags.map((tag) => (
+          <TagChip key={tag} tag={tag} />
+        ))}
+      </div>
+    </FadeIn>
   );
 }
 
@@ -44,14 +45,14 @@ export function TechStack() {
   const { t } = useTranslation();
 
   return (
-    <section id="stack" className="py-24 px-6">
+    <section id="stack" className="py-15 px-6">
       <div className="max-w-5xl mx-auto">
         <SectionTitle title={t.stack.title} />
 
-        <div className="mt-12 space-y-10">
-          <FadeIn delay={0.1}><StackGroup label={t.stack.primary} icons={primaryStack} /></FadeIn>
-          <FadeIn delay={0.2}><StackGroup label={t.stack.tools} icons={toolsStack} /></FadeIn>
-          <FadeIn delay={0.3}><StackGroup label={t.stack.learning} icons={learningStack} /></FadeIn>
+        <div className="mt-12 flex flex-col gap-4">
+          <TagRow tags={row1} delay={0.1} />
+          <TagRow tags={row2} delay={0.2} />
+          <TagRow tags={row3} delay={0.3} />
         </div>
       </div>
     </section>

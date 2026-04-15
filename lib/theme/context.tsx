@@ -12,12 +12,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  /*
-   * O estado inicial é sempre "dark" no servidor (SSR).
-   * O script inline no layout.tsx já aplicou a classe correta no <html>
-   * antes da hidratação, então não haverá flash visual.
-   * O useEffect sincroniza o estado do React com o que está no DOM/localStorage.
-   */
+  // Initial state is always "dark" on the server (SSR).
   const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
@@ -31,7 +26,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme((prev) => {
       const next = prev === "dark" ? "light" : "dark";
 
-      // Atualiza a classe no <html> e salva no localStorage
       if (next === "light") {
         document.documentElement.classList.add("light");
       } else {
@@ -50,10 +44,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-/*
- * Hook customizado — encapsula o useContext e lança erro
- * se for usado fora do ThemeProvider, evitando bugs silenciosos.
- */
 export function useTheme(): ThemeContextType {
   const ctx = useContext(ThemeContext);
   if (!ctx) throw new Error("useTheme must be used within ThemeProvider");

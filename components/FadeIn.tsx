@@ -10,20 +10,6 @@ interface FadeInProps {
   className?: string;
 }
 
-/*
- * FadeIn — componente reutilizável de animação de entrada.
- *
- * Usa `whileInView` do Framer Motion para animar elementos
- * quando entram na viewport (área visível do usuário).
- *
- * Parâmetros:
- *   delay     → atraso antes da animação iniciar (em segundos)
- *   direction → de qual direção o elemento "entra"
- *
- * Por que `viewport={{ once: true }}`?
- *   Evita que a animação rode toda vez que o elemento entra/sai.
- *   Uma vez animado, fica animado. Mais profissional.
- */
 export function FadeIn({
   children,
   delay = 0,

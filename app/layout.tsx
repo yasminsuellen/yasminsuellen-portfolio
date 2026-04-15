@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
+import { Raleway, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 
@@ -9,14 +9,20 @@ const raleway = Raleway({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas-neue",
+  subsets: ["latin"],
+  weight: "400", // Bebas Neue só tem peso 400 — a boldness vem do design da fonte
+});
+
 export const metadata: Metadata = {
-  title: "Yasmin Suellen — Frontend & Backend Developer",
+  title: "Yasmin Suellen - Frontend & Backend Developer",
   description:
     "Portfolio of Yasmin Suellen, a frontend and backend developer focused on building well-typed, production-quality web applications with Next.js, TypeScript, and Node.js.",
   keywords: ["developer", "frontend", "backend", "Next.js", "TypeScript", "portfolio"],
   authors: [{ name: "Yasmin Suellen" }],
   openGraph: {
-    title: "Yasmin Suellen — Frontend & Backend Developer",
+    title: "Yasmin Suellen - Frontend & Backend Developer",
     description:
       "Frontend and backend developer building production-quality web applications.",
     url: "https://yasminsuellen.dev",
@@ -41,7 +47,7 @@ export default function RootLayout({
         {/*
          * Script inline que roda ANTES do React hidratar a página.
          * Lê a preferência salva no localStorage e aplica a classe
-         * correta no <html> — isso evita o "flash" de tema errado.
+         * correta no <html> - evita o "flash" de tema errado.
          */}
         <script
           dangerouslySetInnerHTML={{
@@ -59,7 +65,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${raleway.variable} antialiased`}>
+      <body className={`${raleway.variable} ${bebasNeue.variable} antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>
