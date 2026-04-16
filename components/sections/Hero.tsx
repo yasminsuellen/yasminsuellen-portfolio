@@ -80,16 +80,12 @@ export function Hero() {
           </div>
 
           <FadeIn delay={0.3} direction="right">
-            <div
-              className="hidden md:flex items-center justify-center w-full aspect-square max-w-sm mx-auto rounded-2xl border-2 border-dashed"
-              style={{ borderColor: "var(--border)" }}
-            >
-              <div className="flex flex-col items-center gap-3" style={{ color: "var(--muted)" }}>
-                <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                </svg>
-                <p className="text-xs tracking-widest uppercase font-medium">foto</p>
-              </div>
+            <div className="hidden md:block w-full max-w-sm mx-auto">
+              <img
+                src="/profile-picture.jpg"
+                alt="Yasmin Suellen"
+                className="w-full aspect-square object-cover rounded-2xl"
+              />
             </div>
           </FadeIn>
 
