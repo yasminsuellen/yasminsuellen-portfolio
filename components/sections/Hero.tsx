@@ -79,8 +79,8 @@ export function Hero() {
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.3} direction="right">
-            <div className="hidden md:block w-full max-w-sm mx-auto">
+          <FadeIn delay={0.3} direction="right" className="order-first md:order-none">
+            <div className="w-full max-w-[260px] md:max-w-sm mr-auto md:mx-auto">
               <img
                 src="/profile-picture.jpg"
                 alt="Yasmin Suellen"
