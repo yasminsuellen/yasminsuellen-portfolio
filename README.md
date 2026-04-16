@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dev Portfolio
+Personal portfolio built with Next.js 15 and TypeScript. **[Click here to live demo.](https://yasminsuellen-portfolio.vercel.app)**
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8?style=flat-square&logo=tailwindcss)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://yasminsuellen-portfolio.vercel.app/)
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Bilingual content (English / Portuguese) with instant toggle, no page reload
+- Dark mode (default) and light mode with localStorage persistence
+- Scroll-triggered fade-in animations with Framer Motion
+- Contact form connected to Resend API via Next.js API route
+- Responsive layout with consistent design tokens across both themes
+
+## Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Email:** Resend API
+
+## Project Structure
+
+```
+app/
+├── api/contact/ # Resend email route
+├── globals.css # Design tokens and Tailwind v4 theme
+└── layout.tsx # Fonts, metadata, theme flash prevention
+components/
+├── layout/ # Header and Footer
+├── sections/ # Hero, About, TechStack, Projects, Contact
+├── FadeIn.tsx # Reusable Framer Motion wrapper
+└── Providers.tsx # ThemeProvider + LanguageProvider
+lib/
+├── i18n/ # Language context, pt.ts, en.ts
+└── theme/ # Theme context and localStorage toggle
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Learnings
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Theme switching via CSS custom properties and a single class on `<html>` without Tailwind's `dark:` variant
+- Preventing theme flash with an inline script in `<head>` before React hydration
+- Type-safe i18n with plain React Context - `Translations` type inferred from `pt.ts` and enforced on `en.ts`
+- Hover animations via `useState` and inline styles instead of CSS classes to avoid specificity conflicts with CSS variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technical Challenges
 
-## Learn More
+- **Theme flash prevention:** `suppressHydrationWarning` on `<html>` combined with an inline script that reads localStorage and applies the `light` class before the first paint
+- **Tailwind v4 + CSS variables:** Mapping custom properties to utility classes via `@theme inline` to keep design tokens as the single source of truth
+- **i18n without a library:** Enforcing translation completeness at build time through TypeScript structural typing rather than runtime checks
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Yasmin Suellen** [GitHub](https://github.com/yasminsuellen) · [LinkedIn](https://www.linkedin.com/in/yasminsuellen/)
