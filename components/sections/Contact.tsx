@@ -46,7 +46,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-15 px-6">
+    <section id="contact" className="py-10 px-6">
       <div className="max-w-5xl mx-auto">
         <SectionTitle title={t.contact.title} />
 

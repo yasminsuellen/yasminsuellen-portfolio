@@ -45,7 +45,7 @@ export function TechStack() {
   const { t } = useTranslation();
 
   return (
-    <section id="stack" className="py-15 px-6">
+    <section id="stack" className="py-10 px-6">
       <div className="max-w-5xl mx-auto">
         <SectionTitle title={t.stack.title} />
 
