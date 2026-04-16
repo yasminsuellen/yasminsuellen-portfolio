@@ -8,7 +8,7 @@ export function About() {
   const { t } = useTranslation();
 
   return (
-    <section id="about" className="py-0 px-6">
+    <section id="about" className="py-15 px-6">
       <div className="max-w-5xl mx-auto">
         <SectionTitle title={t.about.title} />
 

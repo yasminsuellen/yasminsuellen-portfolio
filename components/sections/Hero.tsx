@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col justify-start md:justify-center px-6 pt-20 md:pt-16"
+      className="md:min-h-screen flex flex-col justify-start md:justify-center px-6 pt-20 md:pt-16"
     >
       <div className="max-w-5xl mx-auto w-full py-4 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
