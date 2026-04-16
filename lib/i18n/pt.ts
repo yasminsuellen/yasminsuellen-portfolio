@@ -6,23 +6,28 @@ export const pt = {
     contact: "Contato",
   },
   hero: {
-    greeting: "Oi, eu sou",
     name: "Yasmin Suellen",
     role: "Desenvolvedora Frontend & Backend",
     description:
-      "Estudante de Sistemas de Informação com foco em desenvolvimento web. Construo aplicações que unem funcionalidade, organização e uma excelente experiência do usuário.",
+      `Estudante de Sistemas de Informação com foco em desenvolvimento web para construção de 
+      aplicações bem tipadas e de qualidade para produção que unem funcionalidade, 
+      organização e uma excelente experiência do usuário.`,
     cta_github: "Ver GitHub",
     cta_linkedin: "LinkedIn",
     cta_contact: "Fale comigo",
   },
   about: {
     title: "Sobre mim",
-    bio: "Sou desenvolvedora frontend e backend em início de carreira, com foco em desenvolvimento web. Meu objetivo é ir além da curva, construindo coisas reais, aprendendo com profundidade e documentando cada passo da jornada.",
+    bio: `Sou desenvolvedora frontend e backend em início de carreira, com foco em desenvolvimento web. 
+    Meu objetivo é ir além da curva, construindo aplicações reais de relevancia, aprendendo com profundidade e documentando cada passo da jornada.`,
     background_title: "Antes do código",
     background:
-      "Antes de migrar para desenvolvimento, passei 2+ anos na Stone investigando incidentes de segurança e analisando fraudes transacionais com Splunk (SIEM). Depois fui para a AnotaAI (iFood), onde gerenciei o onboarding técnico de plataformas de automação, com 900+ clientes onboardados.",
+      `Antes de migrar para desenvolvimento, passei 2+ anos na Stone investigando incidentes 
+      de segurança e analisando fraudes transacionais com Splunk - SIEM. Depois fui para a AnotaAI/iFood, 
+      onde gerenciei o onboarding técnico de plataformas de automação, com 900+ clientes onboardados.`,
     background_closing:
-      "Esse histórico moldou como eu enxergo software: com consciência prática de comportamento de sistemas, integridade de dados e documentação técnica.",
+      `Esse histórico moldou como eu enxergo software: com consciência prática de comportamento 
+      de sistemas, integridade de dados e documentação técnica.`,
     currently_title: "Atualmente",
     currently: [
       "Cursando Sistemas de Informação na Universidade Veiga de Almeida, previsão: 2028.",
@@ -45,7 +50,9 @@ export const pt = {
       {
         title: "Appointment Rebooking",
         description:
-          "Funcionalidade de reagendamento de consultas médicas construída com Next.js 15, RTK Query e TypeScript. Inclui validação server-side, invalidação automática de cache e lógica de reagendamento por especialidade.",
+          `Funcionalidade de reagendamento de consultas médicas construída com Next.js 15, 
+          RTK Query e TypeScript. Inclui validação server-side, invalidação 
+          automática de cache e lógica de reagendamento por especialidade.`,
         tags: ["Next.js 15", "RTK Query", "TypeScript"],
         github: "https://github.com/yasminsuellen/appointment-rebooking",
       },
@@ -60,7 +67,7 @@ export const pt = {
   },
   contact: {
     title: "Contato",
-    subtitle: "Tem um projeto em mente ou quer trocar uma ideia? Me manda uma mensagem, ou me encontre em:",
+    subtitle: "Tem um projeto em mente ou quer marcar um café virtual? Me manda uma mensagem, ou me encontre em:",
     name_label: "Nome",
     name_placeholder: "Seu nome",
     email_label: "Email",

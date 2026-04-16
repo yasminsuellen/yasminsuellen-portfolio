@@ -8,23 +8,29 @@ export const en: Translations = {
     contact: "Contact",
   },
   hero: {
-    greeting: "Hi, I'm",
     name: "Yasmin Suellen",
     role: "Frontend & Backend Developer",
     description:
-      "Information Systems student focused on web development. I build applications that combine functionality, organization, and great user experience.",
+      `Information Systems student focused on web development for building well-typed, 
+      high-quality production applications that combine functionality, organization, 
+      and an excellent user experience.`,
     cta_github: "GitHub",
     cta_linkedin: "LinkedIn",
     cta_contact: "Get in touch",
   },
   about: {
     title: "About me",
-    bio: "I'm a frontend and backend developer early in my career, focused on web development. My goal is to be above the curve, building real things, learning with depth, and documenting every step of the journey.",
+    bio: `I'm a frontend and backend developer early in my career, focused on web development. 
+      My goal is to be above the curve, building real applications of relevance, learning with depth, 
+      and documenting every step of the journey.`,
     background_title: "Before the code",
     background:
-      "Before transitioning into development, I spent 2+ years at Stone investigating security incidents and analyzing transactional fraud using Splunk (SIEM). I then moved to AnotaAI (iFood), where I managed technical onboarding for automation platforms, completing 900+ client onboardings.",
+      `Before transitioning into development, I spent 2+ years at Stone investigating security 
+      incidents and analyzing transactional fraud using Splunk - SIEM. I then moved to AnotaAI/iFood, 
+      where I managed technical onboarding for automation platforms, completing 900+ client onboardings.`,
     background_closing:
-      "This background shapes how I approach software, with practical awareness of system behavior, data integrity, and technical documentation.",
+      `This background shapes how I approach software, with practical awareness of system behavior, 
+      data integrity, and technical documentation.`,
     currently_title: "Currently",
     currently: [
       "Studying Information Systems at Universidade Veiga de Almeida, expected 2028.",
@@ -47,7 +53,8 @@ export const en: Translations = {
       {
         title: "Appointment Rebooking",
         description:
-          "Patient appointment rebooking feature built with Next.js 15, RTK Query, and TypeScript. Includes server-side validation, automatic cache invalidation, and specialty-locked rebooking logic.",
+          `Patient appointment rebooking feature built with Next.js 15, RTK Query, and TypeScript. 
+          Includes server-side validation, automatic cache invalidation, and specialty-locked rebooking logic.`,
         tags: ["Next.js 15", "RTK Query", "TypeScript"],
         github: "https://github.com/yasminsuellen/appointment-rebooking",
       },
@@ -62,7 +69,7 @@ export const en: Translations = {
   },
   contact: {
     title: "Contact",
-    subtitle: "Have a project in mind or want to chat? Send me a message, or find me on:",
+    subtitle: "Have a project in mind or want to schedule a virtual coffee? Send me a message, or find me on:",
     name_label: "Name",
     name_placeholder: "Your Name",
     email_label: "Email",

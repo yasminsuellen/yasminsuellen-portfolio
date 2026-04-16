@@ -36,7 +36,7 @@ export function About() {
                   {t.about.background}
                 </p>
                 <p
-                  className="text-sm leading-relaxed italic"
+                  className="text-sm leading-relaxed mb-3"
                   style={{ color: "var(--fg)" }}
                 >
                   {t.about.background_closing}
