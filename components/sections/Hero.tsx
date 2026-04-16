@@ -9,9 +9,9 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col justify-center px-6 pt-16"
+      className="min-h-screen flex flex-col justify-start md:justify-center px-6 pt-20 md:pt-16"
     >
-      <div className="max-w-5xl mx-auto w-full py-24">
+      <div className="max-w-5xl mx-auto w-full py-4 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
           <div>
@@ -33,6 +33,15 @@ export function Hero() {
                 {t.hero.role}
               </h2>
             </FadeIn>
+
+            {/* Profile picture — mobile only */}
+            <div className="md:hidden w-full max-w-[260px] mr-auto mb-6">
+              <img
+                src="/profile-picture.jpg"
+                alt="Yasmin Suellen"
+                className="w-full aspect-square object-cover rounded-2xl"
+              />
+            </div>
 
             <FadeIn delay={0.3}>
               <p
@@ -79,8 +88,8 @@ export function Hero() {
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.3} direction="right" className="order-first md:order-none">
-            <div className="w-full max-w-[260px] md:max-w-sm mr-auto md:mx-auto">
+          <FadeIn delay={0.3} direction="right" className="hidden md:block">
+            <div className="w-full max-w-sm mx-auto">
               <img
                 src="/profile-picture.jpg"
                 alt="Yasmin Suellen"
