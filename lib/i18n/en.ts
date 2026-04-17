@@ -57,13 +57,26 @@ export const en: Translations = {
           Includes server-side validation, automatic cache invalidation, and specialty-locked rebooking logic.`,
         tags: ["Next.js 15", "RTK Query", "TypeScript"],
         github: "https://github.com/yasminsuellen/appointment-rebooking",
+        demo: "https://appointment-rebooking.vercel.app",
       },
       {
         title: "Task Management Dashboard",
         description:
-          "Task management application with filtering, sorting, and localStorage persistence, built with Next.js 14 App Router and TypeScript.",
+          `Task management application with filtering, sorting, and localStorage persistence, 
+          built with Next.js 14 App Router and TypeScript.`,
         tags: ["Next.js 14", "TypeScript", "localStorage"],
         github: "https://github.com/yasminsuellen/task-management-dashboard",
+        demo: "https://task-management-dashboard-ten-navy.vercel.app",
+      },
+      {
+        title: "Lead Flow Landing",
+        description:
+          `Product landing page for a lead qualification automation service. Built with Next.js and 
+          TypeScript, with Framer Motion animations, PostgreSQL persistence via Prisma, and a responsive 
+          layout with Tailwind CSS.`,
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
+        github: "https://github.com/yasminsuellen/lead-flow-landing",
+        demo: "https://leadflow-landing-opal.vercel.app",
       },
     ],
   },

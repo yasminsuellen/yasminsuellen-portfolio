@@ -55,6 +55,7 @@ export const pt = {
           automática de cache e lógica de reagendamento por especialidade.`,
         tags: ["Next.js 15", "RTK Query", "TypeScript"],
         github: "https://github.com/yasminsuellen/appointment-rebooking",
+        demo: "https://appointment-rebooking.vercel.app",
       },
       {
         title: "Task Management Dashboard",
@@ -62,6 +63,17 @@ export const pt = {
           "Aplicação de gerenciamento de tarefas com filtragem, ordenação e persistência em localStorage. Construída com Next.js 14 App Router e TypeScript.",
         tags: ["Next.js 14", "TypeScript", "localStorage"],
         github: "https://github.com/yasminsuellen/task-management-dashboard",
+        demo: "https://task-management-dashboard-ten-navy.vercel.app",
+      },
+      {
+        title: "Lead Flow Landing",
+        description:
+          `Landing page de produto para um serviço de automação de qualificação de leads. 
+          Construída com Next.js e TypeScript, animações com Framer Motion, persistência em PostgreSQL 
+          via Prisma e layout responsivo com Tailwind CSS.`,
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
+        github: "https://github.com/yasminsuellen/lead-flow-landing",
+        demo: "https://leadflow-landing-opal.vercel.app",
       },
     ],
   },

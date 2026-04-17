@@ -14,11 +14,20 @@ export function Projects() {
         <SectionTitle title={t.projects.title} />
 
         <div className="mt-12 grid md:grid-cols-2 gap-6">
-          {t.projects.items.map((project, i) => (
-            <FadeIn key={i} delay={i * 0.15} className="h-full">
-              <ProjectCard project={project} t={t} />
-            </FadeIn>
-          ))}
+          {t.projects.items.map((project, i) => {
+            const isLastOdd =
+              i === t.projects.items.length - 1 &&
+              t.projects.items.length % 2 !== 0;
+            return (
+              <FadeIn
+                key={i}
+                delay={i * 0.15}
+                className={`h-full${isLastOdd ? " md:col-span-2" : ""}`}
+              >
+                <ProjectCard project={project} t={t} />
+              </FadeIn>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -76,32 +85,37 @@ function ProjectCard({
         {project.description}
       </p>
 
-      <div className="flex flex-wrap items-center gap-2">
-        {project.tags.map((tag) => (
-          <ProjectTag key={tag} tag={tag} />
-        ))}
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-medium ml-auto transition-colors duration-200"
-          style={{ color: "var(--accent)" }}
-        >
-          <GithubIcon />
-          {t.projects.view_code}
-        </a>
-        {project.demo && (
+      <div className="flex flex-col gap-3">
+        <div className="flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <ProjectTag key={tag} tag={tag} />
+          ))}
+        </div>
+
+        <div className="flex items-center gap-4">
           <a
-            href={project.demo}
+            href={project.github}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200"
-            style={{ color: "var(--muted)" }}
+            style={{ color: "var(--accent)" }}
           >
-            <ExternalIcon />
-            {t.projects.view_demo}
+            <GithubIcon />
+            {t.projects.view_code}
           </a>
-        )}
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200"
+              style={{ color: "var(--muted)" }}
+            >
+              <ExternalIcon />
+              {t.projects.view_demo}
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );
@@ -127,7 +141,7 @@ function ProjectTag({ tag }: { tag: string }) {
 }
 
 function getProjectIndex(title: string) {
-  const titles = ["Appointment Rebooking", "Task Management Dashboard"];
+  const titles = ["Appointment Rebooking", "Task Management Dashboard", "Lead Flow Landing"];
   return titles.indexOf(title) + 1;
 }
 
