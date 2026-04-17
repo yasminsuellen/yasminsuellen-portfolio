@@ -45,7 +45,7 @@ export const pt = {
   projects: {
     title: "Projetos",
     view_code: "Ver Código",
-    view_demo: "Ver demo",
+    view_demo: "Ver Demo",
     items: [
       {
         title: "Appointment Rebooking",

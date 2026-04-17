@@ -48,7 +48,7 @@ export const en: Translations = {
   projects: {
     title: "Projects",
     view_code: "View Code",
-    view_demo: "Live demo",
+    view_demo: "Live Demo",
     items: [
       {
         title: "Appointment Rebooking",
