@@ -6,6 +6,10 @@ Personal portfolio built with Next.js 15 and TypeScript. **[Click here to live d
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-38bdf8?style=flat-square&logo=tailwindcss)
 [![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)](https://yasminsuellen-portfolio.vercel.app/)
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/7d5d2f00-6d1d-4e5c-98b6-7c4301d502f0" alt="Appointment Rebooking Demo" width="100%"/>
+</div>
+
 ## Features
 
 - Bilingual content (English / Portuguese) with instant toggle, no page reload
