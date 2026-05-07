@@ -1,6 +1,4 @@
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
     <footer
       className="border-t py-8 text-center text-sm"
@@ -26,7 +24,7 @@ export function Footer() {
           style={{ color: "var(--accent)" }}
           className="font-semibold hover:opacity-80 transition-opacity duration-200"
         >
-          Let's build something?
+          {"Let's build something?"}
         </a>
       </p>
     </footer>
